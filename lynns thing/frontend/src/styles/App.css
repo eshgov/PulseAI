@@ -1,0 +1,209 @@
+/* General App Styles */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #1a1a1a; /* Dark background */
+  color: white;
+}
+
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+/* Mode Selection Screen */
+.mode-selection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 400px;
+}
+
+.mode-selection h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #e0e0e0;
+}
+
+.mode-selection p {
+  font-size: 1.1rem;
+  color: #a0a0a0;
+  margin-bottom: 32px;
+}
+
+.mode-button {
+  display: block;
+  width: 100%;
+  padding: 24px;
+  margin-bottom: 16px;
+  border-radius: 12px;
+  text-decoration: none;
+  background-color: #333;
+  color: white;
+  border: 2px solid #555;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.mode-button:hover {
+  background-color: #444;
+  border-color: #777;
+}
+
+.mode-button strong {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.mode-button span {
+  font-size: 1rem;
+  color: #c0c0c0;
+}
+
+/* CPR View */
+.cpr-view-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  overflow: hidden;
+}
+
+.camera-feed {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Cover the whole screen */
+  transform: rotateY(180deg); /* Mirror selfie view */
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+}
+
+.overlay-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Make it transparent to clicks */
+  transform: rotateY(180deg); /* Match the video mirror */
+}
+
+/* Feedback UI Overlays */
+.feedback-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  pointer-events: none; /* Make it transparent to clicks */
+}
+
+.emergency-banner {
+  width: 100%;
+  background-color: #d93025; /* Bright Red */
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+  padding: 16px 0;
+  box-sizing: border-box;
+}
+
+.feedback-message {
+  width: 90%;
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-align: center;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.readout-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+.readout-box {
+  min-width: 120px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 2px solid #555;
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+}
+
+.readout-value {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.readout-label {
+  display: block;
+  font-size: 1rem;
+  color: #c0c0c0;
+  margin-top: 4px;
+}
+
+/* BPM Colors */
+.bpm-neutral .readout-value { color: white; }
+.bpm-good .readout-value { color: #00e676; } /* Green */
+.bpm-slow .readout-value { color: #ff1744; } /* Red */
+.bpm-fast .readout-value { color: #ff9100; } /* Orange */
+
+/* Walkthrough Controls */
+.walkthrough-controls {
+  position: absolute;
+  bottom: 150px; /* Position above the readouts */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 16px;
+  border-radius: 12px;
+  pointer-events: all; /* Allow clicks on this */
+}
+
+.walkthrough-controls p {
+  font-size: 1.2rem;
+  margin: 0 0 12px 0;
+  text-align: center;
+}
+
+.skip-button {
+  width: 100%;
+  padding: 16px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: white;
+  background-color: #00aaff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
