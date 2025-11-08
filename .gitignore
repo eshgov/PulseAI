@@ -1,0 +1,23 @@
+
+# local dev
+.DS_Store
+.venv/
+__pycache__/
+*.pyc
+.env
+
+# local dev
+.DS_Store
+.venv/
+__pycache__/
+*.pyc
+.env
+.ipynb_checkpoints/
+data/
+outputs/
+checkpoints/
+models/
+wandb/
+node_modules/
+*.pt
+*.ckpt
